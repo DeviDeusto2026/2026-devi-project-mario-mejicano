@@ -3,15 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class loadLevel : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public int numeroScene;
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            SceneManager.LoadScene(numeroScene);
+        }
     }
 }
