@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -7,6 +8,12 @@ public class PlayerHealth : MonoBehaviour
     public void SetImmunity(bool value)
     {
         immunity = value;
+        StartCoroutine(Countdown(10));
+    }
+    IEnumerator Countdown(int segudos)
+    {
+        yield return new WaitForSeconds(segudos);
+        immunity = false;
     }
     public int getHealth()
     {

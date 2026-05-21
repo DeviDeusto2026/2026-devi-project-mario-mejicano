@@ -7,6 +7,7 @@ public class applyEffect : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player"))
         {
             collision.gameObject.GetComponent<PlayerHealth>().SetImmunity(true);
+            Destroy(gameObject);
         }
     }
 }
