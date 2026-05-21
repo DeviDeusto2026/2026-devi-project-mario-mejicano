@@ -5,17 +5,46 @@ public class playerMovement : MonoBehaviour
     public float speed;
     public float fuerza;
     public bool grounded;
-    public Transform cameraTransform; // <-- arrastra la cámara aquí en el Inspector
+    public Transform cameraTransform;
+    public Transform groundCheck;
+    float contadorAtaque;
+    float Ataquecooldown = 3;
+    [SerializeField] private PlayerHealth health;
+    [SerializeField] private LayerMask groundLayer;
+    private Rigidbody rb;
+    float threshold = -30f;
 
     void Start()
     {
-        fuerza = 10f;
+        fuerza = 5f;
         speed = 12f;
+        contadorAtaque = Ataquecooldown;
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
+        contadorAtaque -= Time.deltaTime;
+        if (contadorAtaque <= 0)
+            contadorAtaque = Ataquecooldown;
+
+        CheckGround();
+    }
+
+    void FixedUpdate()
+    {
         manageInput();
+        if (transform.position.y < threshold)
+        {
+            rb.linearVelocity = Vector3.zero;
+            transform.position = new Vector3(16.5f, 2.8f, 0.20f);
+        }
+    }
+
+    private void CheckGround()
+    {
+        // Lanza una esfera hacia abajo desde los pies del jugador
+        grounded = Physics.CheckSphere(groundCheck.position, 0.4f, groundLayer);
     }
 
     private void manageInput()
@@ -30,27 +59,27 @@ public class playerMovement : MonoBehaviour
         forward.Normalize();
         right.Normalize();
 
-        Vector3 moveDir = (forward * v + right * h);
+        Vector3 moveDir = (forward * v + right * h).normalized;
+        Vector3 velocity = moveDir * speed;
+        velocity.y = rb.linearVelocity.y;
+        rb.linearVelocity = velocity;
+    }
 
-        transform.position += moveDir * speed * Time.deltaTime;
-
+    void LateUpdate()
+    {
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
-            GetComponent<Rigidbody>().AddForce(Vector3.up * fuerza, ForceMode.Impulse);
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+            rb.AddForce(Vector3.up * fuerza, ForceMode.Impulse);
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
-            grounded = true;
-    }
+        if (collision.gameObject.tag == "Enemigo" && !grounded)
+            collision.gameObject.GetComponent<enemy>().TakeDamage(-1);
 
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
-            grounded = false;
+        if (contadorAtaque <= 0 && health.getImmunity())
+            collision.gameObject.GetComponent<enemy>().TakeDamage(-1);
     }
 }
-
-

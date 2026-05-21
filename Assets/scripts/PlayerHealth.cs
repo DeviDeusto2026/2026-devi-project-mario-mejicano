@@ -5,10 +5,21 @@ public class PlayerHealth : MonoBehaviour
 {
     int health = 20;
     bool immunity = false;
+    int contadorTacos = 0;
+    [SerializeField] private healthBar healthUI;
     public void SetImmunity(bool value)
     {
+        contadorTacos++;
         immunity = value;
-        StartCoroutine(Countdown(10));
+        if (contadorTacos < 10)
+        {
+            StartCoroutine(Countdown(10));
+        }
+        healthUI.ChangeUI(health, contadorTacos);
+    }
+    public bool getImmunity()
+    {
+        return immunity;
     }
     IEnumerator Countdown(int segudos)
     {
@@ -19,16 +30,17 @@ public class PlayerHealth : MonoBehaviour
     {
         return health;
     }
-    public void TakeDamagee(int amount)
+    public void TakeDamage(int amount)
     {
         if (!immunity)
         {
-            health -=amount;
+            health +=amount;
             if(health <= 0)
             {
                 Time.timeScale = 0;
                 gameObject.SetActive(false);
             }
         }
+        healthUI.ChangeUI(health, contadorTacos);
     }
 }
