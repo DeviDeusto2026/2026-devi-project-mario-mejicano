@@ -31,7 +31,7 @@ public class menu : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             prepareUI();
         }
