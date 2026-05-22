@@ -31,7 +31,7 @@ public class enemy : MonoBehaviour
             }
         }
     }
-    void Update()
+    public void Update()
     {
         if (rutina == 2)
         {
@@ -46,7 +46,7 @@ public class enemy : MonoBehaviour
             // Mover hacia destino
             transform.position = Vector3.MoveTowards(transform.position, destino, velocidad * Time.deltaTime);
 
-            // Llegó al destino
+            // Llegï¿½ al destino
             if (Vector3.Distance(transform.position, destino) < 0.1f)
                 rutina = 0;
 
