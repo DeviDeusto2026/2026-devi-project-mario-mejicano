@@ -6,29 +6,30 @@ public class menu : MonoBehaviour
     public CanvasGroup menuCanvas;
     [SerializeField] private GameObject botonSalir;
     [SerializeField] private GameObject botonContinuar;
+
     void Start()
     {
         botonSalir.GetComponent<Button>().onClick.AddListener(() => Application.Quit());
         botonContinuar.GetComponent<Button>().onClick.AddListener(() => prepareUI());
-        menuCanvas.alpha = 0;
-        menuCanvas.blocksRaycasts = false;
+
+        SetMenu(false); // estado inicial limpio
         Time.timeScale = 1;
     }
+
+    void SetMenu(bool visible)
+    {
+        menuCanvas.alpha = visible ? 1 : 0;
+        menuCanvas.blocksRaycasts = visible;
+        menuCanvas.interactable = visible; // ? esto faltaba
+        Time.timeScale = visible ? 0 : 1;
+    }
+
     void prepareUI()
     {
-        if (menuCanvas.alpha == 0)
-        {
-            Time.timeScale = 0;
-            menuCanvas.alpha = 1;
-            menuCanvas.blocksRaycasts = true;
-        }
-        else if (menuCanvas.alpha == 1)
-        {
-            Time.timeScale = 1;
-            menuCanvas.alpha = 0;
-            menuCanvas.blocksRaycasts = false;
-        }
+        bool estaVisible = menuCanvas.alpha == 1;
+        SetMenu(!estaVisible);
     }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -37,4 +38,3 @@ public class menu : MonoBehaviour
         }
     }
 }
-
