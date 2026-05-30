@@ -1537,6 +1537,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3330519305108292471}
     - target: {fileID: 3127767494222953849, guid: 7c4d90cf3b56bf6409b1678d1e754b27, type: 3}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 1643954380}
+    - target: {fileID: 3127767494222953849, guid: 7c4d90cf3b56bf6409b1678d1e754b27, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 8
       objectReference: {fileID: 0}
@@ -1612,6 +1616,10 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 3330519305108292471}
+    - target: {fileID: 3476904275745716650, guid: 8211f9fb4af87a3429120d46993c5a79, type: 3}
+      propertyPath: tacoText
+      value: 
+      objectReference: {fileID: 325303773}
     - target: {fileID: 3476904275745716650, guid: 8211f9fb4af87a3429120d46993c5a79, type: 3}
       propertyPath: healthText
       value: 
