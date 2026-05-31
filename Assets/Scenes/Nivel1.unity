@@ -11416,6 +11416,7 @@ MonoBehaviour:
   rutina: 0
   destino: {x: 0, y: 0, z: 0}
   grado: 0
+  obj: {fileID: 1983981806}
   maxDistance: 0
   velocidad: 2
   velocidadRotacion: 5
@@ -28565,6 +28566,7 @@ MonoBehaviour:
   rutina: 0
   destino: {x: 0, y: 0, z: 0}
   grado: 0
+  obj: {fileID: 1983981806}
   maxDistance: 4
   velocidad: 2
   velocidadRotacion: 5
@@ -32362,6 +32364,7 @@ MonoBehaviour:
   rutina: 0
   destino: {x: 0, y: 0, z: 0}
   grado: 0
+  obj: {fileID: 1983981806}
   maxDistance: 0
   velocidad: 2
   velocidadRotacion: 5
@@ -37195,6 +37198,51 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.45268992, y: 0.32452258, z: 0.515676}
   m_Center: {x: 0, y: 0.16226129, z: -0.000000029802322}
+--- !u!1 &1983981805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1983981807}
+  - component: {fileID: 1983981806}
+  m_Layer: 0
+  m_Name: Scene Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1983981806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983981805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ffb43dcb2e35242b98a0541051946d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::loadLevel
+  numeroScene: 0
+--- !u!4 &1983981807
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983981805}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 49.11408, y: 0.67, z: -252.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1988985314 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4511718045884378626, guid: 956a694802068ef46b6c2e3d845f8f01, type: 3}
@@ -40914,3 +40962,42 @@ SceneRoots:
   - {fileID: 1998712140}
   - {fileID: 254708410}
   - {fileID: 1228533710}
+  - {fileID: 1728410774}
+  - {fileID: 1273730920}
+  - {fileID: 940272230}
+  - {fileID: 1579810752}
+  - {fileID: 599857747}
+  - {fileID: 48794279}
+  - {fileID: 2083516167}
+  - {fileID: 1675810039}
+  - {fileID: 994497787}
+  - {fileID: 901687344}
+  - {fileID: 1302217850}
+  - {fileID: 808907044}
+  - {fileID: 1098714414}
+  - {fileID: 738576680}
+  - {fileID: 31519770}
+  - {fileID: 1446679230}
+  - {fileID: 1926515050}
+  - {fileID: 1554188721}
+  - {fileID: 563071939}
+  - {fileID: 1128300570}
+  - {fileID: 1793688636}
+  - {fileID: 2054279029}
+  - {fileID: 2073534071}
+  - {fileID: 864674012}
+  - {fileID: 1933483725}
+  - {fileID: 734173061}
+  - {fileID: 1117875814}
+  - {fileID: 1630321889}
+  - {fileID: 348171507}
+  - {fileID: 112183837}
+  - {fileID: 92701820}
+  - {fileID: 960367612}
+  - {fileID: 463733359}
+  - {fileID: 954859551}
+  - {fileID: 330562742}
+  - {fileID: 1820512000}
+  - {fileID: 1046198158}
+  - {fileID: 1459909265}
+  - {fileID: 1983981807}

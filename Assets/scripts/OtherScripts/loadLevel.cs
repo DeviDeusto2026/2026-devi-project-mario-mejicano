@@ -11,4 +11,8 @@ public class loadLevel : MonoBehaviour
             SceneManager.LoadScene(numeroScene);
         }
     }
+    public void CargarLobby()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

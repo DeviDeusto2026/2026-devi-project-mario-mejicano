@@ -1858,6 +1858,7 @@ MonoBehaviour:
   rutina: 0
   destino: {x: 0, y: 0, z: 0}
   grado: 0
+  obj: {fileID: 0}
   maxDistance: 4
   velocidad: 2
   velocidadRotacion: 5
@@ -1869,6 +1870,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -219012331013549017, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
+      propertyPath: obj
+      value: 
+      objectReference: {fileID: 1324670339}
+    - target: {fileID: -219012331013549017, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1331694734}
     - target: {fileID: -219012331013549017, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
       propertyPath: cantidadEnemigos
       value: 1
@@ -2461,6 +2470,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 316.331, z: 90}
+--- !u!1 &1324670337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1324670338}
+  - component: {fileID: 1324670339}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1324670338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324670337}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 435, y: 0.67, z: -70.96466}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1324670339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324670337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ffb43dcb2e35242b98a0541051946d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::loadLevel
+  numeroScene: 0
 --- !u!1001 &1331694731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3549,3 +3603,4 @@ SceneRoots:
   - {fileID: 1143931747}
   - {fileID: 522226285}
   - {fileID: 1823896015}
+  - {fileID: 1324670338}

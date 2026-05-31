@@ -7,6 +7,7 @@ public class enemy : MonoBehaviour
     public int rutina;
     public Vector3 destino;
     public float grado;
+    [SerializeField] private loadLevel obj;
     [SerializeField] private int maxDistance = 5;
     [SerializeField] private float velocidad = 2f;
     [SerializeField] private float velocidadRotacion = 5f;
@@ -19,6 +20,7 @@ public class enemy : MonoBehaviour
             healthJefe += amount;
             if (healthJefe <= 0)
             {
+                obj.CargarLobby();
                 Destroy(gameObject);
             }
         }
