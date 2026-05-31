@@ -18,10 +18,14 @@ public class Proyectil : MonoBehaviour
     void Update()
     {
         transform.Translate(direccion * velocidad * Time.deltaTime);
+
     }
     
     void OnCollisionEnter(Collision collision)
     {
+                Debug.Log("Destruyendo proyectil");
+        
+        Destroy(gameObject);
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerHealth vidaPlayer = collision.gameObject.GetComponent<PlayerHealth>();
@@ -30,7 +34,5 @@ public class Proyectil : MonoBehaviour
                 vidaPlayer.TakeDamage(-daño);
             }
         }
-        
-        Destroy(gameObject);
     }
 }
