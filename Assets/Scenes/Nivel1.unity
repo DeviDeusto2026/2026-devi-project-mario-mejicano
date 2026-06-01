@@ -11130,14 +11130,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::enemy
   target: {fileID: 62808121}
+  final: {fileID: 1894987895}
   cronometro: 0
   rutina: 0
   destino: {x: 0, y: 0, z: 0}
   grado: 0
-  obj: {fileID: 1983981806}
   maxDistance: 0
   velocidad: 2
   velocidadRotacion: 5
+  healthJefe: 3
 --- !u!65 &628378899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11182,7 +11183,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
@@ -21504,7 +21505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6530213844883207631, guid: 8226da19ba392cf4aa7072c6293d46e5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -210.17433
+      value: -207.57
       objectReference: {fileID: 0}
     - target: {fileID: 6530213844883207631, guid: 8226da19ba392cf4aa7072c6293d46e5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -28174,14 +28175,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::enemy
   target: {fileID: 62808121}
+  final: {fileID: 1894987895}
   cronometro: 0
   rutina: 0
   destino: {x: 0, y: 0, z: 0}
   grado: 0
-  obj: {fileID: 1983981806}
   maxDistance: 4
   velocidad: 2
   velocidadRotacion: 5
+  healthJefe: 3
 --- !u!65 &1509610002
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31972,14 +31974,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::enemy
   target: {fileID: 62808121}
+  final: {fileID: 1894987895}
   cronometro: 0
   rutina: 0
   destino: {x: 0, y: 0, z: 0}
   grado: 0
-  obj: {fileID: 1983981806}
   maxDistance: 0
   velocidad: 2
   velocidadRotacion: 5
+  healthJefe: 3
 --- !u!65 &1708893016
 BoxCollider:
   m_ObjectHideFlags: 0

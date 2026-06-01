@@ -3,16 +3,20 @@ using UnityEngine;
 public class enemy : MonoBehaviour
 {
     [SerializeField] private GameObject target;
+    [SerializeField] private GameObject final;
     public float cronometro;
     public int rutina;
     public Vector3 destino;
     public float grado;
-    [SerializeField] private loadLevel obj;
     [SerializeField] private int maxDistance = 5;
     [SerializeField] private float velocidad = 2f;
     [SerializeField] private float velocidadRotacion = 5f;
     int healthNormal = 1;
     int healthJefe = 3;
+    private void Start()
+    {
+        final.SetActive(false);
+    }
     public void TakeDamage(int amount)
     {
         if (gameObject.tag.Equals("Jefe"))
@@ -20,7 +24,7 @@ public class enemy : MonoBehaviour
             healthJefe += amount;
             if (healthJefe <= 0)
             {
-                obj.CargarLobby();
+                final.SetActive(true);
                 Destroy(gameObject);
             }
         }

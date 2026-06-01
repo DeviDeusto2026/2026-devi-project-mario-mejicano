@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
@@ -25,8 +25,6 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
         contadorAtaque -= Time.deltaTime;
-        if (contadorAtaque <= 0)
-            contadorAtaque = Ataquecooldown;
 
         CheckGround();
     }
@@ -76,10 +74,18 @@ public class playerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        enemy enemigo = collision.gameObject.GetComponent<enemy>();
+        if (enemigo == null) return;
         if (collision.gameObject.tag == "Enemigo" && !grounded)
-            collision.gameObject.GetComponent<enemy>().TakeDamage(-1);
+        {
+            enemigo.TakeDamage(-1);
+            return;
+        }
 
         if (contadorAtaque <= 0 && health.getImmunity())
-            collision.gameObject.GetComponent<enemy>().TakeDamage(-1);
+        {
+            enemigo.TakeDamage(-1);
+            contadorAtaque = Ataquecooldown;
+        }
     }
 }
